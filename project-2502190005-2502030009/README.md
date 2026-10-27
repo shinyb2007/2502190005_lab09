@@ -1,7 +1,7 @@
 # Village Borewell Pump Telemetry Data Layer
 
 ## Problem & User
-Rural drinking-water pumps fail when field technicians miss abnormal voltage spikes and sustained overcurrent. This project helps Panchayat Water Technicians quickly ingest daily telemetry, reject malformed records, and produce an audit report for maintenance decisions.
+Rural drinking-water pumps fail when village technicians miss abnormal voltage spikes and sustained overcurrent. This project helps Panchayat Water Technicians quickly ingest daily telemetry, reject bad records, and produce a maintenance summary without losing any data silently.
 
 ## Input Format
 Records in `data/sample.txt` use pipe-delimited format:
@@ -16,7 +16,7 @@ Physical validation rules:
 
 ## Project Structure
 ```text
-project-2502190005-2502190039/
+project-2502190005-2502030009/
 ├── README.md
 ├── datalayer.py
 ├── main.py
@@ -24,7 +24,7 @@ project-2502190005-2502190039/
 │   └── sample.txt
 ├── reports/
 │   └── report_YYYY-MM-DD_HHMM.txt
-└── 2502190005_lab09.py
+└── 2502190005_lab09.py   # notebook-generated helper script
 ```
 
 ## How to Run
@@ -35,7 +35,7 @@ python main.py
 ```
 
 ## Output
-The program reads `data/sample.txt`, validates each row, ignores malformed entries in the summary, and writes a timestamped audit report to `reports/report_YYYY-MM-DD_HHMM.txt`.
+The program reads `data/sample.txt`, validates each row, records malformed entries in a problems list, and writes a timestamped report to `reports/report_YYYY-MM-DD_HHMM.txt`.
 
 ## Notes
-This repository is intentionally designed so that a stranger can clone it and run the program without any hidden setup or commented-out generation scripts.
+This repository is designed so a stranger can clone it and run the solution without hidden setup or extra steps.
