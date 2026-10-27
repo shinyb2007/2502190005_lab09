@@ -1,0 +1,41 @@
+# Village Borewell Pump Telemetry Data Layer
+
+## Problem & User
+Rural drinking-water pumps fail when village technicians miss abnormal voltage spikes and sustained overcurrent. This project helps Panchayat Water Technicians quickly ingest daily telemetry, reject bad records, and produce a maintenance summary without losing any data silently.
+
+## Input Format
+Records in `data/sample.txt` use pipe-delimited format:
+`YYYY-MM-DD|PUMP_ID|VOLTAGE|CURRENT|STATUS`
+
+Example:
+`2026-10-01|PUMP-01|220|14.2|OK`
+
+Physical validation rules:
+- Voltage safe envelope: 160V - 280V
+- Current safe envelope: 0.0A - 40.0A
+
+## Project Structure
+```text
+project-2502190005-2502030009/
+├── README.md
+├── datalayer.py
+├── main.py
+├── data/
+│   └── sample.txt
+├── reports/
+│   └── report_YYYY-MM-DD_HHMM.txt
+└── 2502190005_lab09.py   # notebook-generated helper script
+```
+
+## How to Run
+From inside the project folder:
+
+```bash
+python main.py
+```
+
+## Output
+The program reads `data/sample.txt`, validates each row, records malformed entries in a problems list, and writes a timestamped report to `reports/report_YYYY-MM-DD_HHMM.txt`.
+
+## Notes
+This repository is designed so a stranger can clone it and run the solution without hidden setup or extra steps.
