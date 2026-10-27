@@ -1,0 +1,24 @@
+============================================================
+     VILLAGE WATER-PUMP TELEMETRY & MAINTENANCE REPORT
+============================================================
+Generated On : 2026-10-27 12:00:00
+Source File  : data/sample.txt
+Status       : 14 Accepted | 2 Flagged
+------------------------------------------------------------
+
+OPERATIONAL SUMMARY
+------------------------------------
+METRIC                    VALUE
+------------------------------------
+Valid Records Read          14
+Mean Voltage (V)         211.9
+Mean Current (A)          15.45
+------------------------------------
+
+DATA AUDIT · SKIPPED ENTRIES & REASONS
+------------------------------------------------------------
+LINE  REASON                                              RAW INPUT
+------------------------------------------------------------
+9     Malformed syntax: Expected YYYY-MM-DD|PUMP-XX|VOLTAGE|CURRENT|STATUS  2026-10-03|PUMP-03|180|21.0
+13    Out of physical bounds: Voltage 440V outside safe 160-280V                 2026-10-05|PUMP-01|440|13.8|OK
+============================================================
